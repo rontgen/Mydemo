@@ -53,6 +53,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
     register_all_packages();
 
     ResMgr::Instance()->initRes();
+    auto test = ResMgr::Instance()->getPathFromKey("main_menu");
+
     // create a scene. it's an autorelease object
     auto scene = SceneManager::createScene(gdef::gs::kMainMenu);
 

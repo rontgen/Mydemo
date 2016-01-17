@@ -1,10 +1,11 @@
 #include "ResMgr.h"
 #include "json/rapidjson.h"
 #include "json/document.h"
+//#include "cocos-ext.h"
 
 USING_NS_CC;
 
-ResMgr* ResMgr::m_sResMgr = nullptr;
+//ResMgr* ResMgr::m_sResMgr = nullptr;
 
 ResMgr::ResMgr()
     :m_mapImages()
@@ -13,15 +14,6 @@ ResMgr::ResMgr()
 
 ResMgr::~ResMgr()
 {
-}
-
-ResMgr* ResMgr::Instance()
-{
-    if (!m_sResMgr)
-    {
-        m_sResMgr = new ResMgr();
-    }
-    return m_sResMgr;
 }
 
 bool ResMgr::initRes()
@@ -44,4 +36,15 @@ bool ResMgr::initRes()
         }
     }
     return true;
+}
+
+cocos2d::Node* ResMgr::createRes(const std::string& resName, ResType type)
+{
+    return nullptr;
+}
+
+const std::string& ResMgr::getPathFromKey(const std::string& resKey)
+{
+    CCASSERT(m_mapImages.find(resKey) != m_mapImages.end(), "");
+    return m_mapImages.at(resKey);
 }
