@@ -9,6 +9,19 @@
     "quit_btn":"images/UI/QuitButton",
     "quit_btn_down":"images/UI/QuitButtonDown",
     "menu_slider":"images/UI/Slider",
-    "menu_slider_bg":"images/UI/SliderButton"
+    "menu_slider_bg":"images/UI/SliderButton",
+
+    "red_ball":"images/ball/RedBall.png",
+    "white_ball":"images/ball/WhiteBall.png",
+
+    "billiard_cue":"images/Scene/BilliardCue.png",
+    "pool_table":"images/Scene/pool_table.png",
+
+    "arrow_ccw":"images/UI/Game/arrowCCW.png",
+    "arrow_ccw_pressed":"images/UI/Game/arrowCCW.png",
+    "arrow_cw":"images/UI/Game/arrowCW.png",
+    "arrow_cw_pressed":"images/UI/Game/arrowCW.png",
+    "arrow_hit":"images/UI/Game/arrowForHit.png",
+    "arrow_hit_pressed":"images/UI/Game/arrowForHitSelected.png"
     }
 }

@@ -4,44 +4,31 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>images/share/CloseNormal.png</key>
+            <key>images/ball/RedBall.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,324},{40,40}}</string>
+                <string>{{2,14},{10,10}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{40,40}}</string>
+                <string>{{0,0},{10,10}}</string>
                 <key>sourceSize</key>
-                <string>{40,40}</string>
+                <string>{10,10}</string>
             </dict>
-            <key>images/share/CloseSelected.png</key>
+            <key>images/ball/WhiteBall.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,366},{38,38}}</string>
-                <key>offset</key>
-                <string>{0,1}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{1,0},{38,38}}</string>
-                <key>sourceSize</key>
-                <string>{40,40}</string>
-            </dict>
-            <key>images/share/HelloWorld.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{2,2},{480,320}}</string>
+                <string>{{2,2},{10,10}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{0,0},{480,320}}</string>
+                <string>{{0,0},{10,10}}</string>
                 <key>sourceSize</key>
-                <string>{480,320}</string>
+                <string>{10,10}</string>
             </dict>
         </dict>
         <key>metadata</key>
@@ -49,13 +36,13 @@
             <key>format</key>
             <integer>2</integer>
             <key>realTextureFileName</key>
-            <string>share.png</string>
+            <string>ball.png</string>
             <key>size</key>
-            <string>{512,512}</string>
+            <string>{16,32}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:cd8e94a938288a70c46ee6f097eb3973:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:bd4fc7be09f4eaea46b4d6a2afc8668b:1/1$</string>
             <key>textureFileName</key>
-            <string>share.png</string>
+            <string>ball.png</string>
         </dict>
     </dict>
 </plist>

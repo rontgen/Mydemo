@@ -4,6 +4,84 @@
     <dict>
         <key>frames</key>
         <dict>
+            <key>images/UI/Game/arrowCCW.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1800,2},{104,104}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{12,12},{104,104}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
+            <key>images/UI/Game/arrowCCWSelected.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1694,2},{104,104}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{12,12},{104,104}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
+            <key>images/UI/Game/arrowCW.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1192,724},{104,106}}</string>
+                <key>offset</key>
+                <string>{0,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{12,10},{104,106}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
+            <key>images/UI/Game/arrowCWSelected.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1588,2},{104,104}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{11,12},{104,104}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
+            <key>images/UI/Game/arrowForHit.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1298,2},{104,104}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{12,12},{104,104}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
+            <key>images/UI/Game/arrowForHitSelected.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1482,2},{104,104}}</string>
+                <key>offset</key>
+                <string>{0,1}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{12,11},{104,104}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
             <key>images/UI/MainMenu/ContinueButton.png</key>
             <dict>
                 <key>frame</key>
@@ -144,7 +222,7 @@
             <key>size</key>
             <string>{2048,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c75c6555304f819a175b60bcfc064dbf:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:f3a976616e20b15d046b3cee3c473985:1/1$</string>
             <key>textureFileName</key>
             <string>UI.png</string>
         </dict>
