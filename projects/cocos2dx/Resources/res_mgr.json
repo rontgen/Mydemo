@@ -1,0 +1,14 @@
+{
+    "images":{
+    "main_menu":"images/UI/MainMenu",
+    "continue_btn":"images/UI/ContinueButton",
+    "continue_btn_down":"images/UI/ContinueButtonDown",
+    "log":"images/UI/logo",
+    "play_btn":"images/UI/PlayGameButton",
+    "play_btn_down":"images/UI/PlayGameButtonDown",
+    "quit_btn":"images/UI/QuitButton",
+    "quit_btn_down":"images/UI/QuitButtonDown",
+    "menu_slider":"images/UI/Slider",
+    "menu_slider_bg":"images/UI/SliderButton"
+    }
+}
