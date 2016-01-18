@@ -23,5 +23,8 @@
     "arrow_cw_pressed":"images/UI/Game/arrowCW.png",
     "arrow_hit":"images/UI/Game/arrowForHit.png",
     "arrow_hit_pressed":"images/UI/Game/arrowForHitSelected.png"
+    },
+    "csb":{
+        "test":"layout/MainMenu.csb"
     }
 }

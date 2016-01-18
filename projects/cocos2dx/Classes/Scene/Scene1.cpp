@@ -1,5 +1,8 @@
 #include "Scene1.h"
 #include "SceneManager/SceneManager.h"
+#include "ResMgr/ResMgr.h"
+#include "../../cocos/editor-support/cocostudio/ActionTimeline/CSLoader.h"
+
 USING_NS_CC;
 
 Scene* Scene1::createScene()
@@ -72,7 +75,8 @@ bool Scene1::init()
 
     // add the sprite as a child to this layer
     this->addChild(sprite, 0);
-
+    auto temp = CSLoader::getInstance()->createNode(ResMgr::Instance()->getPathFromKey(ResType::kCsb, "test"));
+    addChild(temp);
     return true;
 }
 
