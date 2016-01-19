@@ -1,13 +1,14 @@
 #include "ResMgr.h"
-
-//#include "cocos-ext.h"
+#include "CSLoader.h"
+#include "json/rapidjson.h"
 
 USING_NS_CC;
 
 //ResMgr* ResMgr::m_sResMgr = nullptr;
 
 ResMgr::ResMgr()
-    :m_mapImages()
+    : m_mapImages()
+    , m_sImgPathPrefix("")
 {
 }
 
@@ -26,6 +27,7 @@ bool ResMgr::initRes()
     {
         log("GetParseError %s\n", rapidJson.GetParseError());
     }
+    __getImgPath(rapidJson);
     __initResMap(kSprite, rapidJson);
     __initResMap(kCsb, rapidJson);
     return true;
@@ -33,7 +35,22 @@ bool ResMgr::initRes()
 
 cocos2d::Node* ResMgr::createRes(const std::string& resName, ResType type)
 {
-    return nullptr;
+    cocos2d::Node* pNd = nullptr;
+    switch (type)
+    {
+    case kSprite:
+        {
+            pNd = static_cast<Node*>(__createSprite(resName));
+        }
+        break;
+    case kScale9Sprite:
+        break;
+    case kCsb:
+        break;
+    default:
+        break;
+    }
+    return pNd;
 }
 
 const std::string& ResMgr::getPathFromKey(const ResType type, const std::string& resKey)
@@ -66,6 +83,33 @@ bool ResMgr::__checkPathStr(const ResType type, const std::string& pStr)
     //SpriteFrameCache::getInstance()->addSpriteFramesWithFile()
     //else add Texture
     //TextureCache::getInstance()::addImage()
+    auto kLength = std::string("images/").size();
+    auto path = getPathByKey(type, pStr);
+    auto subFolderPath = path.substr(kLength);
+    auto folderName = subFolderPath.substr(0, subFolderPath.find_first_of("/"));
+    auto pListPath = m_sImgPathPrefix + folderName + ".plist";
+    auto pngPath = m_sImgPathPrefix + folderName + ".png";
+    switch (type)
+    {
+        case kSprite:
+        case kScale9Sprite:
+        {
+            if (FileUtils::getInstance()->isFileExist(pListPath)
+                && FileUtils::getInstance()->isFileExist(pngPath))
+            {
+                SpriteFrameCache::getInstance()->addSpriteFramesWithFile(pListPath);
+                return true;
+            } 
+            else
+            {
+                TextureCache::getInstance()->addImage(path);
+                return true;
+            }
+        }
+        break;
+    default:
+        break;
+    }
     return true;
 }
 
@@ -97,6 +141,64 @@ void ResMgr::__initResMap(const ResType type, const rapidjson::Document& rjson)
             }
         }
         break;
+    default:
+        break;
+    }
+}
+
+void ResMgr::__getImgPath(const rapidjson::Document& rjson)
+{
+   if (rjson.IsObject() && rjson.HasMember("package_prefix"))
+   {
+       const rapidjson::Value& prefixArray = rjson["package_prefix"];
+       CCASSERT(prefixArray.Size() == 1, "[ResMgr][__getImgPath]: prefixArray size != 1");
+       m_sImgPathPrefix = prefixArray[SizeType(0)].GetString();
+   }
+}
+
+cocos2d::Ref* ResMgr::__createSprite(const std::string& pStr)
+{
+    Ref* pRef = nullptr;
+    if (__checkPathStr(ResType::kSprite, pStr))
+    {
+        pRef = Sprite::createWithSpriteFrameName(getPathByKey(ResType::kSprite, pStr));
+    } 
+    else
+    {
+        pRef = TextureCache::getInstance()->getTextureForKey(getPathByKey(ResType::kSprite, pStr));
+    }
+    return pRef;
+}
+
+const std::string& ResMgr::getPathByKey(const ResType type, const std::string& key)
+{
+    
+    switch (type)
+    {
+    case kSprite:
+    {
+        if (m_mapImages.find(key)!= m_mapImages.end())
+        {
+            return m_mapImages.at(key);
+        }
+        else
+        {
+            return "";
+        }
+    }
+    break;
+    case kCsb:
+    {
+        if (m_mapLayout.find(key) != m_mapLayout.end())
+        {
+            return m_mapLayout.at(key);
+        }
+        else
+        {
+            return "";
+        }
+    }
+    break;
     default:
         break;
     }

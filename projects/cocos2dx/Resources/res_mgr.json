@@ -1,15 +1,15 @@
 {
     "images":{
-    "main_menu":"images/UI/MainMenu",
-    "continue_btn":"images/UI/ContinueButton",
-    "continue_btn_down":"images/UI/ContinueButtonDown",
-    "log":"images/UI/logo",
-    "play_btn":"images/UI/PlayGameButton",
-    "play_btn_down":"images/UI/PlayGameButtonDown",
-    "quit_btn":"images/UI/QuitButton",
-    "quit_btn_down":"images/UI/QuitButtonDown",
-    "menu_slider":"images/UI/Slider",
-    "menu_slider_bg":"images/UI/SliderButton",
+    "main_menu":"images/UI/MainMenu/MainMenu.png",
+    "continue_btn":"images/UI/MainMenu/ContinueButton.png",
+    "continue_btn_down":"images/UI/MainMenu/ContinueButtonDown.png",
+    "log":"images/UI/MainMenu/logo.png",
+    "play_btn":"images/UI/MainMenu/PlayGameButton.png",
+    "play_btn_down":"images/UI/MainMenu/PlayGameButtonDown.png",
+    "quit_btn":"images/UI/MainMenu/QuitButton.png",
+    "quit_btn_down":"images/UI/MainMenu/QuitButtonDown.png",
+    "menu_slider":"images/UI/MainMenu/Slider.png",
+    "menu_slider_bg":"images/UI/MainMenu/SliderButton.png",
 
     "red_ball":"images/ball/RedBall.png",
     "white_ball":"images/ball/WhiteBall.png",
@@ -26,5 +26,6 @@
     },
     "csb":{
         "test":"layout/MainMenu.csb"
-    }
+    },
+    "package_prefix": ["images/package/"]
 }
