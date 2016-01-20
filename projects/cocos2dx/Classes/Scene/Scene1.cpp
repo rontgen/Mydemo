@@ -1,6 +1,6 @@
 #include "Scene1.h"
-#include "SceneManager/SceneManager.h"
-#include "ResMgr/ResMgr.h"
+#include "SceneManager.h"
+#include "ResMgr.h"
 #include "CSLoader.h"
 
 USING_NS_CC;

@@ -1,6 +1,6 @@
 /**
   * add global def for game
-  * author:gwang
+  * author:rontgen
   * date:2016/01/15
   */
 #pragma once

@@ -1,8 +1,8 @@
 
 #include "SceneManager.h"
-#include "../Scene/MainMenu.h"
-#include "../Scene/Scene1.h"
-#include "../Scene/Scene2.h"
+#include "MainMenu.h"
+#include "Scene1.h"
+#include "Scene2.h"
 
 USING_NS_CC;
 const std::string startGameMsg = "start_game";

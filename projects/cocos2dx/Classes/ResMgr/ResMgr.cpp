@@ -1,6 +1,6 @@
 #include "ResMgr.h"
 #include "CSLoader.h"
-#include "json/rapidjson.h"
+#include "rapidjson.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;

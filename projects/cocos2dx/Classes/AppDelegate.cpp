@@ -1,8 +1,8 @@
 #include "MyGameDef.h"
 #include "AppDelegate.h"
 //#include "HelloWorldScene.h"
-#include "SceneManager/SceneManager.h"
-#include "ResMgr/ResMgr.h"
+#include "SceneManager.h"
+#include "ResMgr.h"
 
 USING_NS_CC;
 

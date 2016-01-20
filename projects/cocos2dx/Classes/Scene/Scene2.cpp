@@ -1,5 +1,5 @@
 #include "Scene2.h"
-#include "SceneManager/SceneManager.h"
+#include "SceneManager.h"
 USING_NS_CC;
 
 Scene* Scene2::createScene()

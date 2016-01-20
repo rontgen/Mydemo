@@ -1,9 +1,9 @@
 
 #include "MainMenu.h"
 #include "MyResource.h"
-#include "../SceneManager/SceneManager.h"
-#include "Shader/ShaderNode.h"
-#include "Shader/SpriteBlur.h"
+#include "SceneManager.h"
+#include "ShaderNode.h"
+#include "SpriteBlur.h"
 USING_NS_CC;
 Scene* MainMenu::createScene()
 {
