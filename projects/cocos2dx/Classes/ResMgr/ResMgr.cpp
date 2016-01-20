@@ -3,7 +3,7 @@
 #include "json/rapidjson.h"
 
 USING_NS_CC;
-
+using namespace cocos2d::ui;
 //ResMgr* ResMgr::m_sResMgr = nullptr;
 
 ResMgr::ResMgr()
@@ -84,7 +84,7 @@ bool ResMgr::__checkPathStr(const ResType type, const std::string& pStr)
     //else add Texture
     //TextureCache::getInstance()::addImage()
     auto kLength = std::string("images/").size();
-    auto path = getPathByKey(type, pStr);
+    auto path = __getPathByKey(type, pStr);
     auto subFolderPath = path.substr(kLength);
     auto folderName = subFolderPath.substr(0, subFolderPath.find_first_of("/"));
     auto pListPath = m_sImgPathPrefix + folderName + ".plist";
@@ -98,12 +98,16 @@ bool ResMgr::__checkPathStr(const ResType type, const std::string& pStr)
                 && FileUtils::getInstance()->isFileExist(pngPath))
             {
                 SpriteFrameCache::getInstance()->addSpriteFramesWithFile(pListPath);
-                return true;
+                if (SpriteFrameCache::getInstance()->getSpriteFrameByName(path))
+                {
+                    return true;
+                }
+                return false;
             } 
             else
             {
                 TextureCache::getInstance()->addImage(path);
-                return true;
+                return false;
             }
         }
         break;
@@ -161,16 +165,30 @@ cocos2d::Ref* ResMgr::__createSprite(const std::string& pStr)
     Ref* pRef = nullptr;
     if (__checkPathStr(ResType::kSprite, pStr))
     {
-        pRef = Sprite::createWithSpriteFrameName(getPathByKey(ResType::kSprite, pStr));
+        pRef = Sprite::createWithSpriteFrameName(__getPathByKey(ResType::kSprite, pStr));
     } 
     else
     {
-        pRef = TextureCache::getInstance()->getTextureForKey(getPathByKey(ResType::kSprite, pStr));
+        pRef = Sprite::create(__getPathByKey(ResType::kSprite, pStr));
     }
     return pRef;
 }
 
-const std::string& ResMgr::getPathByKey(const ResType type, const std::string& key)
+cocos2d::Ref* ResMgr::__createScale9Sprite(const std::string& pStr)
+{
+    Ref* pRef = nullptr;
+    if (__checkPathStr(ResType::kScale9Sprite, pStr))
+    {
+        pRef = Scale9Sprite::createWithSpriteFrameName(__getPathByKey(ResType::kSprite, pStr));
+    }
+    else
+    {
+        pRef = Scale9Sprite::create(__getPathByKey(ResType::kSprite, pStr));
+    }
+    return pRef;
+}
+
+const std::string& ResMgr::__getPathByKey(const ResType type, const std::string& key)
 {
     
     switch (type)

@@ -1,3 +1,8 @@
+/**
+ *author:rontgen
+ *date:2016/01/19-2016/01/20
+ *Func Descrip: provider a common interface for res creation
+ */
 #pragma once
 #include "cocos2d.h"
 #include "json/document.h"
@@ -33,11 +38,15 @@ private:
     ~ResMgr();
     ResMgr(const ResMgr*);
     ResMgr& operator = (const ResMgr*);
+
     bool __checkPathStr(const ResType type, const std::string& pStr);
     void __initResMap(const ResType type, const rapidjson::Document& rjson);
     void __getImgPath(const rapidjson::Document& rjson);
+    
     cocos2d::Ref* __createSprite(const std::string& pStr);
-    const std::string& getPathByKey(const ResType type, const std::string& key);
+    cocos2d::Ref* __createScale9Sprite(const std::string& pStr);
+
+    const std::string& __getPathByKey(const ResType type, const std::string& key);
 private:
     std::map<std::string, std::string> m_mapImages;
     std::map<std::string, std::string> m_mapLayout;

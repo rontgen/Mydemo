@@ -1,5 +1,6 @@
 {
     "images":{
+    "pool_table_new":"images/unpackage/pool_table.png",
     "main_menu":"images/UI/MainMenu/MainMenu.png",
     "continue_btn":"images/UI/MainMenu/ContinueButton.png",
     "continue_btn_down":"images/UI/MainMenu/ContinueButtonDown.png",

@@ -77,6 +77,7 @@ bool Scene1::init()
     this->addChild(sprite, 0);
     auto temp = CSLoader::getInstance()->createNode(ResMgr::Instance()->getPathFromKey(ResType::kCsb, "test"));
     addChild(temp);
+ 
     return true;
 }
 
