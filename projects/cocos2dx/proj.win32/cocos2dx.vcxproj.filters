@@ -25,6 +25,9 @@
     <Filter Include="src\ResMgr">
       <UniqueIdentifier>{e8d67495-c9af-4af7-8c34-547ba911a4ba}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\MsgCenter">
+      <UniqueIdentifier>{aa048172-7e31-460d-9163-7b90ccf120f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -56,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\ResMgr\ResMgr.cpp">
       <Filter>src\ResMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\MsgCenter\MsgCenter.cpp">
+      <Filter>src\MsgCenter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +100,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\ResMgr\ResMgr.h">
       <Filter>src\ResMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\MsgCenter\MsgCenter.h">
+      <Filter>src\MsgCenter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
