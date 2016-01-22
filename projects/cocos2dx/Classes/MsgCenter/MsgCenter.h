@@ -9,7 +9,7 @@
 #include <functional>
 #include <list>
 #include <map>
-typedef const std::function<void(const cocos2d::Ref*)>& Callback;
+typedef const std::function<void(const cocos2d::Ref*)> callback;
 class MsgCenter : public cocos2d::Component
 {
 public:
@@ -19,15 +19,15 @@ public:
         return &ins;
     }
     void update(float delta) override;
-    void addObserver(const std::string& msg, Callback func);
-    void sendMsg(const std::string& msg, const cocos2d::Ref* pSender);
+    void addObserver(const std::string msg, callback func);
+    void sendMsg(const std::string msg, const cocos2d::Ref* pSender);
 private:
     MsgCenter();
     ~MsgCenter();
     MsgCenter(const MsgCenter*);
     MsgCenter& operator = (const MsgCenter*);
 private:
-    std::map<const std::string&, Callback> m_mapListener;
-    std::list<const std::string&> m_list;
+    std::map<const std::string, callback> m_mapListener;
+    std::list<const std::string> m_list;
 };
 

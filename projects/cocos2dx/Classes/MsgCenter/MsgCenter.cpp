@@ -16,16 +16,16 @@ MsgCenter::~MsgCenter()
     m_list.clear();
 }
 
-void MsgCenter::addObserver(const std::string& msg, Callback func)
+void MsgCenter::addObserver(const std::string msg, callback func)
 {
     if (m_mapListener.find(msg)!= m_mapListener.end())
     {
         return;
     }
-    //m_mapListener.insert(std::make_pair(msg, func));
+    m_mapListener.insert(std::make_pair(msg, func));
 }
 
-void MsgCenter::sendMsg(const std::string& msg, const cocos2d::Ref* pSender)
+void MsgCenter::sendMsg(const std::string msg, const cocos2d::Ref* pSender)
 {
     if (m_mapListener.find(msg) != m_mapListener.end())
     {
