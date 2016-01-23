@@ -18,6 +18,11 @@
     "billiard_cue":"images/Scene/BilliardCue.png",
     "pool_table":"images/Scene/pool_table.png",
 
+    "endgame":"images/UI/Game/endgame.png",
+    "endgameSeleted":"images/UI/Game/endgameSeleted.png",
+    "restart":"images/UI/Game/restart.png",
+    "restart Seleted":"images/UI/Game/restart Seleted.png",
+
     "arrow_ccw":"images/UI/Game/arrowCCW.png",
     "arrow_ccw_pressed":"images/UI/Game/arrowCCW.png",
     "arrow_cw":"images/UI/Game/arrowCW.png",

@@ -1,0 +1,11 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Type="Plist" Name="share" ID="ac878e1e-3663-49d7-9f24-289aaa556ef4" Version="2.2.8.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="True" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="images/share/CloseNormal.png" />
+      <FilePathData Path="images/share/CloseSelected.png" />
+      <FilePathData Path="images/share/HelloWorld.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

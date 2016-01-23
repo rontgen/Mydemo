@@ -1,0 +1,55 @@
+<Solution>
+  <PropertyGroup Name="CocosTest" Version="2.2.8.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="images">
+          <Folder Name="ball">
+            <Image Name="RedBall.png" />
+            <Image Name="WhiteBall.png" />
+          </Folder>
+          <Folder Name="package">
+            <PlistInfo Name="ball.csi" Type="Plist" />
+            <PlistInfo Name="UI.csi" Type="Plist" />
+            <PlistInfo Name="share.csi" Type="Plist" />
+            <PlistInfo Name="Scene.csi" Type="Plist" />
+          </Folder>
+          <Folder Name="Scene">
+            <Image Name="BilliardCue.png" />
+            <Image Name="pool_table.png" />
+          </Folder>
+          <Folder Name="share">
+            <Image Name="CloseNormal.png" />
+            <Image Name="CloseSelected.png" />
+            <Image Name="HelloWorld.png" />
+          </Folder>
+          <Folder Name="UI">
+            <Folder Name="Game">
+              <Image Name="arrowCCW.png" />
+              <Image Name="arrowCCWSelected.png" />
+              <Image Name="arrowCW.png" />
+              <Image Name="arrowCWSelected.png" />
+              <Image Name="arrowForHit.png" />
+              <Image Name="arrowForHitSelected.png" />
+            </Folder>
+            <Folder Name="MainMenu">
+              <Image Name="ContinueButton.png" />
+              <Image Name="ContinueButtonDown.png" />
+              <Image Name="logo.png" />
+              <Image Name="MainMenu.png" />
+              <Image Name="PlayGameButton.png" />
+              <Image Name="PlayGameButtonDown.png" />
+              <Image Name="QuitButton.png" />
+              <Image Name="QuitButtonDown.png" />
+              <Image Name="Slider.png" />
+              <Image Name="SliderButton.png" />
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder Name="layout">
+          <Project Name="MainMenu.csd" Type="Layer" />
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

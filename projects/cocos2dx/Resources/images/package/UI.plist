@@ -7,7 +7,7 @@
             <key>images/UI/Game/arrowCCW.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1800,2},{104,104}}</string>
+                <string>{{1616,110},{104,104}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>images/UI/Game/arrowCCWSelected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1694,2},{104,104}}</string>
+                <string>{{1722,108},{104,104}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>images/UI/Game/arrowCW.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1192,724},{104,106}}</string>
+                <string>{{1616,2},{104,106}}</string>
                 <key>offset</key>
                 <string>{0,1}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>images/UI/Game/arrowCWSelected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1588,2},{104,104}}</string>
+                <string>{{1934,2},{104,104}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>images/UI/Game/arrowForHit.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1298,2},{104,104}}</string>
+                <string>{{1828,2},{104,104}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>images/UI/Game/arrowForHitSelected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1482,2},{104,104}}</string>
+                <string>{{1722,2},{104,104}}</string>
                 <key>offset</key>
                 <string>{0,1}</string>
                 <key>rotated</key>
@@ -82,10 +82,62 @@
                 <key>sourceSize</key>
                 <string>{128,128}</string>
             </dict>
+            <key>images/UI/Game/endgame.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{382,892},{124,124}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{2,2},{124,124}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
+            <key>images/UI/Game/endgameSeleted.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{256,892},{124,124}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1,2},{124,124}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
+            <key>images/UI/Game/restart Seleted.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,892},{126,126}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,1},{126,126}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
+            <key>images/UI/Game/restart.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{130,892},{124,124}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{2,2},{124,124}}</string>
+                <key>sourceSize</key>
+                <string>{128,128}</string>
+            </dict>
             <key>images/UI/MainMenu/ContinueButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1114,832},{366,106}}</string>
+                <string>{{1248,832},{366,106}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -98,7 +150,7 @@
             <key>images/UI/MainMenu/ContinueButtonDown.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{452,724},{370,110}}</string>
+                <string>{{508,858},{370,110}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -124,7 +176,7 @@
             <key>images/UI/MainMenu/PlayGameButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{746,858},{366,106}}</string>
+                <string>{{1196,724},{366,106}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -137,7 +189,7 @@
             <key>images/UI/MainMenu/PlayGameButtonDown.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{374,892},{370,110}}</string>
+                <string>{{824,724},{370,110}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -150,7 +202,7 @@
             <key>images/UI/MainMenu/QuitButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{824,724},{366,106}}</string>
+                <string>{{880,858},{366,106}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -163,7 +215,7 @@
             <key>images/UI/MainMenu/QuitButtonDown.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,892},{370,110}}</string>
+                <string>{{452,724},{370,110}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -222,7 +274,7 @@
             <key>size</key>
             <string>{2048,1024}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:f3a976616e20b15d046b3cee3c473985:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:c32788e9d9da25c550e581b20341e8f1:1/1$</string>
             <key>textureFileName</key>
             <string>UI.png</string>
         </dict>

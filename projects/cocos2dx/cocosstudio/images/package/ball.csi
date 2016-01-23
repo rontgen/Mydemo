@@ -1,0 +1,11 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Type="Plist" Name="ball" ID="b8bb210e-bfef-4ae3-91d3-da5c45b8de78" Version="2.2.8.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="True" ctype="PlistInfoData">
+    <MaxSize Width="256" Height="1024" />
+    <ImageFiles>
+      <FilePathData Path="images/ball/RedBall.png" />
+      <FilePathData Path="images/ball/WhiteBall.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

@@ -1,0 +1,10 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Type="Plist" Name="Scene" ID="ef3aa2fb-63cf-49bc-a977-02b18f44f57a" Version="2.2.8.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="True" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="images/Scene/BilliardCue.png" />
+      <FilePathData Path="images/Scene/pool_table.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

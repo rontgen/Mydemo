@@ -1,0 +1,14 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Type="Plist" Name="UI" ID="fab70bdc-8fd2-4c0d-93b0-0f9d132e214f" Version="2.2.8.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="True" ctype="PlistInfoData">
+    <MaxSize Width="1024" Height="1024" />
+    <ImageFiles>
+      <FilePathData Path="images/UI/Game/arrowCCW.png" />
+      <FilePathData Path="images/UI/Game/arrowCCWSelected.png" />
+      <FilePathData Path="images/UI/Game/arrowCW.png" />
+      <FilePathData Path="images/UI/Game/arrowCWSelected.png" />
+      <FilePathData Path="images/UI/Game/arrowForHit.png" />
+      <FilePathData Path="images/UI/Game/arrowForHitSelected.png" />
+    </ImageFiles>
+  </Content>
+</PlistInfoProjectFile>
