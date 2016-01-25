@@ -1,7 +1,7 @@
 {
     "images":{
     "pool_table_new":"images/unpackage/pool_table.png",
-    "main_menu":"images/UI/MainMenu/MainMenu.png",
+    "main_menu_test":"images/UI/MainMenu/MainMenu.png",
     "continue_btn":"images/UI/MainMenu/ContinueButton.png",
     "continue_btn_down":"images/UI/MainMenu/ContinueButtonDown.png",
     "log":"images/UI/MainMenu/logo.png",
@@ -12,11 +12,12 @@
     "menu_slider":"images/UI/MainMenu/Slider.png",
     "menu_slider_bg":"images/UI/MainMenu/SliderButton.png",
 
-    "red_ball":"images/ball/RedBall.png",
-    "white_ball":"images/ball/WhiteBall.png",
+    "red_ball":"images/share/RedBall.png",
+    "white_ball":"images/share/WhiteBall.png",
+    "force_bar":"images/share/ForceBarBG.png",
+    "force_bar_bg":"images/share/ForceBarFG.png",
 
     "billiard_cue":"images/Scene/BilliardCue.png",
-    "pool_table":"images/Scene/pool_table.png",
 
     "endgame":"images/UI/Game/endgame.png",
     "endgameSeleted":"images/UI/Game/endgameSeleted.png",
@@ -28,7 +29,10 @@
     "arrow_cw":"images/UI/Game/arrowCW.png",
     "arrow_cw_pressed":"images/UI/Game/arrowCW.png",
     "arrow_hit":"images/UI/Game/arrowForHit.png",
-    "arrow_hit_pressed":"images/UI/Game/arrowForHitSelected.png"
+    "arrow_hit_pressed":"images/UI/Game/arrowForHitSelected.png",
+
+    "main_menu":"images/unpackage/HelloWorld.png",
+    "pool_table":"images/unpackage/pool_table.png"
     },
     "csb":{
         "test":"layout/MainMenu.csb"
