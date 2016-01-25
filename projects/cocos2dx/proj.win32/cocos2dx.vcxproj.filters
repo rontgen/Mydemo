@@ -63,6 +63,9 @@
     <ClCompile Include="..\Classes\MsgCenter\MsgCenter.cpp">
       <Filter>src\MsgCenter</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Ball\Ball.cpp">
+      <Filter>src\Ball</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -103,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\MsgCenter\MsgCenter.h">
       <Filter>src\MsgCenter</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Ball\Ball.h">
+      <Filter>src\Ball</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
