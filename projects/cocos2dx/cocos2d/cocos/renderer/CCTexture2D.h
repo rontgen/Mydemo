@@ -209,11 +209,11 @@ public:
      */
     virtual std::string getDescription() const;
 
-	/** Release only the gl texture.
+    /** Release only the gl texture.
      * @js NA
      * @lua NA
      */
-	void releaseGLTexture();
+    void releaseGLTexture();
 
     /** Initializes with a texture2d with data.
      
@@ -260,16 +260,16 @@ public:
     Extensions to make it easy to create a Texture2D object from an image file.
     */
     /** 
-	Initializes a texture from a UIImage object.
+    Initializes a texture from a UIImage object.
 
     We will use the format you specified with setDefaultAlphaPixelFormat to convert the image for texture.
     NOTE: It will not convert the pvr image file.
     @param image An UIImage object.
-	*/
+    */
     bool initWithImage(Image * image);
     
     /** 
-	Initializes a texture from a UIImage object.
+    Initializes a texture from a UIImage object.
 
     We will use the format you passed to the function to convert the image format to the texture format.
     If you pass PixelFormat::Automatic, we will auto detect the image render type and use that type for texture to render.
