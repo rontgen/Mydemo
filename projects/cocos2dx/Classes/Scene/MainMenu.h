@@ -16,11 +16,14 @@ public:
 
     // implement the "static create()" method manually
     CREATE_FUNC(MainMenu);
+    virtual void draw(cocos2d::Renderer* renderer, const cocos2d::Mat4& transform, uint32_t flags) override;
 private:
+    void __onDraw(const cocos2d::Mat4& transform, uint32_t flags);
     void __menuStartCallback(cocos2d::Ref* pSender);
     void __menuContinueCallback(cocos2d::Ref* pSender);
     void __menuQuitCallback(cocos2d::Ref* pSender);
     cocos2d::CCNotificationCenter* m_pNotification;
+    cocos2d::CustomCommand _customCommand;
     enum MainMenuTag
     {
         startBtn = 0<< 1,

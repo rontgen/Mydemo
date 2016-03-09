@@ -89,6 +89,12 @@ bool MainMenu::init()
     // add "HelloWorld" splash screen"
     auto sprite = Sprite::create(kimgMainMenu);
 
+    //shader test start
+    auto glProgram = GLProgram::createWithFilenames(ccPositionTextureColor_noMVP_vert, kShaderTest);
+    auto glProgramState = GLProgramState::getOrCreateWithGLProgram(glProgram);
+    sprite->setGLProgramState(glProgramState);
+    //end
+
     // position the sprite on the center of the screen
     sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     // add the sprite as a child to this layer
@@ -134,4 +140,18 @@ void MainMenu::__menuContinueCallback(cocos2d::Ref* pSender)
 void MainMenu::__menuQuitCallback(cocos2d::Ref* pSender)
 {
     CCNotificationCenter::sharedNotificationCenter()->postNotification(quitGameMsg, NULL);
+}
+
+void MainMenu::draw(Renderer *renderer, const Mat4 &transform, uint32_t flags)
+{
+    _customCommand.init(_globalZOrder, transform, flags);
+    _customCommand.func = CC_CALLBACK_0(MainMenu::__onDraw, this, transform, flags);
+    renderer->addCommand(&_customCommand);
+    Node::draw(renderer, transform, flags);
+}
+
+
+void MainMenu::__onDraw(const Mat4 &transform, uint32_t flags)
+{
+    auto glProgramState = getGLProgramState();
 }
