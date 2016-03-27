@@ -12,4 +12,5 @@ static const std::string kimgMainMenuBtnQuitPressed = "images/UI/MainmenuQuitBut
 
 //shader
 static const std::string kShaderTest = "Shader/example_greyScale.fsh";
+static const std::string kShaderVertexAttributePassShader = "Shader/attibute_pass_shader.vsh";
 #endif

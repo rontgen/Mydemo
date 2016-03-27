@@ -90,7 +90,7 @@ bool MainMenu::init()
     auto sprite = Sprite::create(kimgMainMenu);
 
     //shader test start
-    auto glProgram = GLProgram::createWithFilenames(ccPositionTextureColor_noMVP_vert, kShaderTest);
+    auto glProgram = GLProgram::createWithFilenames(kShaderVertexAttributePassShader, kShaderTest);
     auto glProgramState = GLProgramState::getOrCreateWithGLProgram(glProgram);
     sprite->setGLProgramState(glProgramState);
     //end
