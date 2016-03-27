@@ -90,8 +90,11 @@ bool MainMenu::init()
     auto sprite = Sprite::create(kimgMainMenu);
 
     //shader test start
-    auto glProgram = GLProgram::createWithFilenames(kShaderVertexAttributePassShader, kShaderTest);
+    auto glProgram = GLProgram::createWithFilenames(kShaderVertexAttributePassShader, kLenseFlareShader);
     auto glProgramState = GLProgramState::getOrCreateWithGLProgram(glProgram);
+    auto spriteContentSize = sprite->getTexture()->getContentSizeInPixels();
+    glProgramState->setUniformVec2("textureResolution", Vec2(spriteContentSize.width, spriteContentSize.height));
+    glProgramState->setUniformVec2("resolution", Vec2(spriteContentSize.width, spriteContentSize.height));
     sprite->setGLProgramState(glProgramState);
     //end
 
