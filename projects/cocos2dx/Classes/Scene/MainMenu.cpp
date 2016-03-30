@@ -4,6 +4,8 @@
 #include "SceneManager.h"
 #include "ShaderNode.h"
 #include "SpriteBlur.h"
+#include "ResMgr.h"
+
 USING_NS_CC;
 Scene* MainMenu::createScene()
 {
@@ -90,13 +92,15 @@ bool MainMenu::init()
     auto sprite = Sprite::create(kimgMainMenu);
 
     //shader test start
-    auto glProgram = GLProgram::createWithFilenames(kShaderVertexAttributePassShader, kLenseFlareShader);
-    auto glProgramState = GLProgramState::getOrCreateWithGLProgram(glProgram);
-    auto spriteContentSize = sprite->getTexture()->getContentSizeInPixels();
-    glProgramState->setUniformVec2("textureResolution", Vec2(spriteContentSize.width, spriteContentSize.height));
-    glProgramState->setUniformVec2("resolution", Vec2(spriteContentSize.width, spriteContentSize.height));
-    sprite->setGLProgramState(glProgramState);
+//     auto glProgram = GLProgram::createWithFilenames(kShaderVertexAttributePassShader, kLenseFlareShader);
+//     auto glProgramState = GLProgramState::getOrCreateWithGLProgram(glProgram);
+//     auto spriteContentSize = sprite->getTexture()->getContentSizeInPixels();
+//     glProgramState->setUniformVec2("textureResolution", Vec2(spriteContentSize.width, spriteContentSize.height));
+//     glProgramState->setUniformVec2("resolution", Vec2(spriteContentSize.width, spriteContentSize.height));
+//     sprite->setGLProgramState(glProgramState);
     //end
+    auto glShaderState = ResMgr::Instance()->createShader("attribute_pass_vertex", "grey_scale");
+    sprite->setGLProgramState(glShaderState);
 
     // position the sprite on the center of the screen
     sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));

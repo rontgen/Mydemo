@@ -23,27 +23,31 @@ bool ResMgr::initRes()
     auto contentStr = FileUtils::getInstance()->getStringFromFile(filePath);
     rapidjson::Document rapidJson;
     rapidJson.Parse<0>(contentStr.c_str());
-    if (rapidJson.HasParseError())  //Ω‚Œˆ¥ÌŒÛ  
+    if (rapidJson.HasParseError())  //Ëß£ÊûêÈîôËØØ  
     {
         log("GetParseError %s\n", rapidJson.GetParseError());
     }
     __getImgPath(rapidJson);
     __initResMap(kSprite, rapidJson);
     __initResMap(kCsb, rapidJson);
+    __initResMap(kShader, rapidJson);
     return true;
 }
 
-cocos2d::Node* ResMgr::createRes(const std::string& resName, ResType type)
+cocos2d::Ref* ResMgr::createRes(const std::string& resName, ResType type)
 {
-    cocos2d::Node* pNd = nullptr;
+    cocos2d::Ref* pNd = nullptr;
     switch (type)
     {
     case kSprite:
         {
-            pNd = static_cast<Node*>(__createSprite(resName));
+            return __createSprite(resName);
         }
         break;
     case kScale9Sprite:
+        {
+             return __createScale9Sprite(resName);
+        }
         break;
     case kCsb:
         break;
@@ -53,6 +57,10 @@ cocos2d::Node* ResMgr::createRes(const std::string& resName, ResType type)
     return pNd;
 }
 
+GLProgramState* ResMgr::createShader(const std::string& vertexStr, const std::string& fragStr)
+{
+    return __createShaderProgram(vertexStr, fragStr);
+}
 const std::string& ResMgr::getPathFromKey(const ResType type, const std::string& resKey)
 {
     switch (type)
@@ -70,6 +78,12 @@ const std::string& ResMgr::getPathFromKey(const ResType type, const std::string&
             return m_mapLayout.at(resKey);
         }
         break;
+    case kShader:
+    {
+        CCASSERT(m_mapShader.find(resKey) != m_mapShader.end(), "");
+        return m_mapShader.at(resKey);
+    }
+    break;
     default:
         break;
     }
@@ -145,6 +159,18 @@ void ResMgr::__initResMap(const ResType type, const rapidjson::Document& rjson)
             }
         }
         break;
+    case kShader:
+    {
+        if (rjson.IsObject() && rjson.HasMember("shader"))
+        {
+            const rapidjson::Value& membersObject = rjson["shader"];
+            for (rapidjson::Value::ConstMemberIterator it = membersObject.MemberonBegin(); it != membersObject.MemberonEnd(); it++)
+            {
+                m_mapShader.insert(std::make_pair(std::string(it->name.GetString()), std::string(it->value.GetString())));
+            }
+        }
+    }
+    break;
     default:
         break;
     }
@@ -188,6 +214,20 @@ cocos2d::Ref* ResMgr::__createScale9Sprite(const std::string& pStr)
     return pRef;
 }
 
+cocos2d::Ref* ResMgr::__createCsbLayer(const std::string& pStr)
+{
+    Ref* pRef = nullptr;
+    return pRef;
+}
+
+cocos2d::GLProgramState* ResMgr::__createShaderProgram(const std::string& pVertexStr, const std::string& pFragStr)
+{
+    auto pVextexShaderPath = __getPathByKey(ResType::kShader, pVertexStr);
+    auto pFragmentShaderPath = __getPathByKey(ResType::kShader, pFragStr);
+    auto program = GLProgram::createWithFilenames(pVextexShaderPath, pFragmentShaderPath);
+    return GLProgramState::getOrCreateWithGLProgram(program);
+}
+
 const std::string& ResMgr::__getPathByKey(const ResType type, const std::string& key)
 {
     
@@ -210,6 +250,17 @@ const std::string& ResMgr::__getPathByKey(const ResType type, const std::string&
         if (m_mapLayout.find(key) != m_mapLayout.end())
         {
             return m_mapLayout.at(key);
+        }
+        else
+        {
+            return "";
+        }
+    }
+    case kShader:
+    {
+        if (m_mapShader.find(key) != m_mapShader.end())
+        {
+            return m_mapShader.at(key);
         }
         else
         {

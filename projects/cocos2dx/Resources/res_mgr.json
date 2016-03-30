@@ -37,5 +37,10 @@
     "csb":{
         "test":"layout/MainMenu.csb"
     },
+    "shader":{
+        "lense_flare":"Shader/example_lensFlare.fsh",
+        "grey_scale":"Shader/example_greyScale.fsh",
+        "attribute_pass_vertex":"Shader/attibute_pass_shader.vsh"
+    },
     "package_prefix": ["images/package/"]
 }

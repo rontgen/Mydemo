@@ -4,6 +4,7 @@
  *Func Descrip: provider a common interface for res creation
  */
 #pragma once
+
 #include "cocos2d.h"
 #include "json/document.h"
 #include "UIScale9Sprite.h"
@@ -13,6 +14,7 @@ enum ResType
     kSprite = 1 << 1,
     kScale9Sprite = 1 << 2,
     kCsb = 1 << 3,
+    kShader = 1 <<4,
 };
 USING_NS_CC;
 using namespace rapidjson;
@@ -31,7 +33,8 @@ public:
         return &ins;
     }
     bool initRes();
-    cocos2d::Node* createRes(const std::string& resName, ResType type);
+    cocos2d::Ref* createRes(const std::string& resName, ResType type);
+    GLProgramState* createShader(const std::string& vertexStr, const std::string& fragStr);
     const std::string& getPathFromKey(const ResType type, const std::string& resKey);
 private:
     ResMgr();
@@ -45,11 +48,14 @@ private:
     
     cocos2d::Ref* __createSprite(const std::string& pStr);
     cocos2d::Ref* __createScale9Sprite(const std::string& pStr);
+    cocos2d::Ref* __createCsbLayer(const std::string& pStr);
+    cocos2d::GLProgramState* __createShaderProgram(const std::string& pVertexStr, const std::string& pFragStr);
 
     const std::string& __getPathByKey(const ResType type, const std::string& key);
 private:
     std::map<std::string, std::string> m_mapImages;
     std::map<std::string, std::string> m_mapLayout;
+    std::map<std::string, std::string> m_mapShader;
     std::string m_sImgPathPrefix;
 };
 
