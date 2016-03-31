@@ -50,6 +50,9 @@ cocos2d::Ref* ResMgr::createRes(const std::string& resName, ResType type)
         }
         break;
     case kCsb:
+        {
+            return __createCsbLayer(resName);
+        }
         break;
     default:
         break;
@@ -217,6 +220,8 @@ cocos2d::Ref* ResMgr::__createScale9Sprite(const std::string& pStr)
 cocos2d::Ref* ResMgr::__createCsbLayer(const std::string& pStr)
 {
     Ref* pRef = nullptr;
+    auto pCSLoader = CSLoader::getInstance();
+    pRef = pCSLoader->createNode(__getPathByKey(ResType::kCsb, pStr));
     return pRef;
 }
 

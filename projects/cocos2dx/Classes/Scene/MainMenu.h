@@ -7,10 +7,6 @@ class MainMenu : public cocos2d::Layer
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
     static cocos2d::Scene* createScene();
-
-    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
-    virtual bool init();
-
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
 
@@ -18,6 +14,8 @@ public:
     CREATE_FUNC(MainMenu);
     virtual void draw(cocos2d::Renderer* renderer, const cocos2d::Mat4& transform, uint32_t flags) override;
 private:
+    // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
+    virtual bool init() override;
     void __onDraw(const cocos2d::Mat4& transform, uint32_t flags);
     void __menuStartCallback(cocos2d::Ref* pSender);
     void __menuContinueCallback(cocos2d::Ref* pSender);
