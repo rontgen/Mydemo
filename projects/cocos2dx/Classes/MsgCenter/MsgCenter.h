@@ -29,5 +29,6 @@ private:
 private:
     std::map<const std::string, callback> m_mapListener;
     std::list<const std::string> m_list;
+    /* todo: remove buffer list and add buffer list */
 };
 
