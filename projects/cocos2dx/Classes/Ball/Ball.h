@@ -31,12 +31,12 @@ public:
         , m_pB2dBdy(nullptr)
     {}
     ~b2dSprite();
-    bool getInitFlag(){ return m_bIsInit; };
+    bool getInitFlag(){ return m_bIsInit; }
     void ChangeInitFlag(bool hasInit){ m_bIsInit = hasInit; }
-    void setSprite(cocos2d::Sprite* pSprite){ m_pSprite = pSprite; };
-    cocos2d::Sprite* getSprite(){ return m_pSprite; };
-    void setB2dBdy(b2Body* pB2dBdy){ m_pB2dBdy = pB2dBdy; };
-    b2Body* getB2dBdy() { return m_pB2dBdy; };
+    void setSprite(cocos2d::Sprite* pSprite){ m_pSprite = pSprite; }
+    cocos2d::Sprite* getSprite(){ return m_pSprite; }
+    void setB2dBdy(b2Body* pB2dBdy){ m_pB2dBdy = pB2dBdy; }
+    b2Body* getB2dBdy() { return m_pB2dBdy; }
 private:
     bool m_bIsInit;
     cocos2d::Sprite* m_pSprite;
@@ -54,8 +54,8 @@ public:
                        , const b2BodyDef* b2dbdyDef
                        , const b2FixtureDef* b2dFixDef);
     CC_SYNTHESIZE(BallType, m_type, TypeDef);
-    bool checkInit(){ return m_pB2dSprite->getInitFlag(); };
-    b2dSprite* getB2dSprite() { return m_pB2dSprite; };
+    bool checkInit(){ return m_pB2dSprite->getInitFlag(); }
+    b2dSprite* getB2dSprite() { return m_pB2dSprite; }
  private:
      b2dSprite* m_pB2dSprite;
 };
