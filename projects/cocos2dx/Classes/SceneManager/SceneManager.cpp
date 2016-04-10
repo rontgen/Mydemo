@@ -9,7 +9,9 @@ const std::string startGameMsg = "start_game";
 const std::string continueGameMsg = "continue_game";
 const std::string quitGameMsg = "quit_game";
 const std::string backToMenuMsg = "back_menu";
-static Scene* m_pScene = nullptr;
+
+Scene* SceneManager::m_pScene = nullptr;
+
 SceneManager::SceneManager() 
                : m_SceneIndex(0)
                , m_pMainMenu(nullptr)
@@ -20,41 +22,20 @@ SceneManager::SceneManager()
 
 SceneManager::~SceneManager()
 {}
-Scene* SceneManager::createScene(unsigned int index)
+Scene* SceneManager::createScene(uint32 index)
 {
-    auto scene = Scene::create();
-    auto nullLayer = SceneManager::create();
-    switch (index)
-    {
-    case 0:
+    SceneManager *pRet = new(std::nothrow) SceneManager();
+        if (pRet && pRet->init())
         {
-            auto layer = MainMenu::create();
-            scene->addChild(layer);
-            //__addObserver();
-        }
-        break;
-    case 1:
+            pRet->autorelease();
+            return pRet->getSceneByIndex(index);
+        } 
+        else 
         {
-            auto layer = Scene1::create();
-            scene->addChild(layer);
-           // __addObserver();
+            delete pRet; 
+            pRet = NULL;
+            return NULL;
         }
-        break;
-    case 2:
-        {
-            auto layer = Scene2::create();
-            scene->addChild(layer);
-            //__addObserver();
-        }
-        break;
-    default:
-        //__addObserver();
-        break;
-    }
-  
-    // return the scene
-    m_pScene = scene;
-    return scene;
 }
 void SceneManager::__addObserver()
 {
@@ -64,6 +45,17 @@ void SceneManager::__addObserver()
     CCNotificationCenter::sharedNotificationCenter()->addObserver(this, callfuncO_selector(SceneManager::menuCloseCallback), quitGameMsg, NULL);
 
 }
+
+cocos2d::Scene* SceneManager::getSceneByIndex(uint32 index)
+{
+    auto ite = m_mapScene.find(index);
+    if (ite != m_mapScene.end())
+    {
+        m_pScene = ite->second;
+    }
+    return m_pScene;
+}
+
 // on "init" you need to initialize your instance
 bool SceneManager::init()
 {
@@ -74,6 +66,7 @@ bool SceneManager::init()
         return false;
     }
     __addObserver();
+    __initSceneMap();
     Size visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
@@ -121,4 +114,11 @@ void SceneManager::__backToMenu(cocos2d::Ref* pSender)
 void SceneManager::__cleanObserver()
 {
     CCNotificationCenter::sharedNotificationCenter()->removeAllObservers(this);
+}
+
+void SceneManager::__initSceneMap()
+{
+    m_mapScene.emplace(gdef::gs::kMainMenu, MainMenu::createScene());
+    m_mapScene.emplace(gdef::gs::kScene1, Scene1::createScene());
+    m_mapScene.emplace(gdef::gs::kScene1, Scene2::createScene());
 }

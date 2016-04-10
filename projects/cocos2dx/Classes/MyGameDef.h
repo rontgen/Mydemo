@@ -14,3 +14,5 @@ namespace gdef {
         };
     }
 }
+
+typedef unsigned int uint32;
