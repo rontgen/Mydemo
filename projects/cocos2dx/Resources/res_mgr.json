@@ -32,7 +32,9 @@
     "arrow_hit_pressed":"images/UI/Game/arrowForHitSelected.png",
 
     "main_menu":"images/unpackage/HelloWorld.png",
-    "pool_table":"images/unpackage/pool_table.png"
+    "pool_table":"images/unpackage/pool_table.png",
+    "bg_test":"images/unpackage/bg.png",
+    "wave_test":"images/unpackage/frame_bg.png"
     },
     "csb":{
         "test":"layout/MainMenu.csb"
@@ -40,7 +42,9 @@
     "shader":{
         "lense_flare":"Shader/example_lensFlare.fsh",
         "grey_scale":"Shader/example_greyScale.fsh",
-        "attribute_pass_vertex":"Shader/attibute_pass_shader.vsh"
+        "attribute_pass_vertex":"Shader/attibute_pass_shader.vsh",
+        "wave_shader_vertex":"Shader/ver_pass_attrib.vsh",
+        "wave_shader_frag":"Shader/frag_wave.fsh"
     },
     "package_prefix": ["images/package/"]
 }

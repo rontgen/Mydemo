@@ -43,7 +43,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     FileUtils::getInstance()->addSearchPath("../Resources/");
 
-    director->getOpenGLView()->setDesignResolutionSize(1280.f, 720.f, ResolutionPolicy::EXACT_FIT);
+    director->getOpenGLView()->setDesignResolutionSize(/*1280.f, 720.f*/480.f, 320.f, ResolutionPolicy::EXACT_FIT);
     // turn on display FPS
     director->setDisplayStats(true);
 

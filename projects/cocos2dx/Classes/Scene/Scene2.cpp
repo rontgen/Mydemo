@@ -67,15 +67,24 @@ bool Scene2::init()
     this->addChild(label, 1);
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
+    auto pBg = static_cast<Sprite*>(ResMgr::Instance()->createRes("bg_test", ResType::kSprite));
 
     // position the sprite on the center of the screen
-    sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    pBg->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
 
+    auto pWaveTest = static_cast<Sprite*>(ResMgr::Instance()->createRes("wave_test", ResType::kSprite));
+    auto glState = ResMgr::Instance()->createShader("wave_shader_vertex", "wave_shader_frag");
+    auto spriteContentSize = pWaveTest->getTexture()->getContentSizeInPixels();
+    glState->setUniformVec2("resolution", Vec2(spriteContentSize.width, spriteContentSize.height));
+    glState->setUniformTexture("tex0", pWaveTest->getTexture());
+    pWaveTest->setGLProgramState(glState);
+    auto winSize = Director::getInstance()->getWinSize();
+    pWaveTest->setPosition(Vec2(/*visibleSize.width / 2 + origin.x*/winSize.width / 2.f, /*visibleSize.height / 2 + origin.y*/winSize.height/2.f));
     // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
-    auto csbLayer = static_cast<cocos2d::Layer*>(ResMgr::Instance()->createRes("test", ResType::kCsb));
-    this->addChild(csbLayer);
+    this->addChild(pBg, 0);
+    this->addChild(pWaveTest, 1);
+    //auto csbLayer = static_cast<cocos2d::Layer*>(ResMgr::Instance()->createRes("test", ResType::kCsb));
+    //this->addChild(csbLayer);
     return true;
 }
 
