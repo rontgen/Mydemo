@@ -52,7 +52,10 @@ private:
     cocos2d::GLProgramState* __createShaderProgram(const std::string& pVertexStr, const std::string& pFragStr);
 
     const std::string& __getPathByKey(const ResType type, const std::string& key);
+    void __initResTypeMap();
+    void __initMapFromJson(const std::string& mapType, std::map<std::string, std::string>& map, const rapidjson::Document& rjson);
 private:
+    std::unordered_map<ResType, std::tuple<std::string, std::map<std::string, std::string>>> m_mapResType;
     std::map<std::string, std::string> m_mapImages;
     std::map<std::string, std::string> m_mapLayout;
     std::map<std::string, std::string> m_mapShader;

@@ -28,6 +28,7 @@ bool ResMgr::initRes()
         log("GetParseError %s\n", rapidJson.GetParseError());
     }
     __getImgPath(rapidJson);
+    __initResTypeMap();
     __initResMap(kSprite, rapidJson);
     __initResMap(kCsb, rapidJson);
     __initResMap(kShader, rapidJson);
@@ -134,44 +135,44 @@ bool ResMgr::__checkPathStr(const ResType type, const std::string& pStr)
     return true;
 }
 
+void ResMgr::__initResTypeMap()
+{
+    m_mapResType.clear();
+    m_mapResType.emplace(ResType::kCsb, std::make_tuple("csb", m_mapLayout));
+    m_mapResType.emplace(ResType::kSprite, std::make_tuple("images", m_mapLayout));
+    m_mapResType.emplace(ResType::kShader, std::make_tuple("shader", m_mapLayout));
+}
+
+void ResMgr::__initMapFromJson(const std::string& mapType, std::map<std::string, std::string>& map, const rapidjson::Document& rjson)
+{
+    if (rjson.IsObject() && rjson.HasMember(mapType.c_str()))
+    {
+        map.clear();
+        const rapidjson::Value& membersObject = rjson[mapType.c_str()];
+        for (rapidjson::Value::ConstMemberIterator it = membersObject.MemberonBegin(); it != membersObject.MemberonEnd(); it++)
+        {
+            map.emplace(std::string(it->name.GetString()), std::string(it->value.GetString()));
+        }
+    }
+}
+
 void ResMgr::__initResMap(const ResType type, const rapidjson::Document& rjson)
 {
     switch (type)
     {
     case kSprite:
         {
-            if (rjson.IsObject() && rjson.HasMember("images"))
-            {
-                const rapidjson::Value& membersObject = rjson["images"];
-                for (rapidjson::Value::ConstMemberIterator it = membersObject.MemberonBegin(); it != membersObject.MemberonEnd(); it++)
-                {
-                    m_mapImages.insert(std::make_pair(std::string(it->name.GetString()), std::string(it->value.GetString())));
-                }
-            }
+            __initMapFromJson("images", m_mapImages, rjson);
         }
         break;
     case kCsb:
         {
-            if (rjson.IsObject() && rjson.HasMember("csb"))
-            {
-                const rapidjson::Value& membersObject = rjson["csb"];
-                for (rapidjson::Value::ConstMemberIterator it = membersObject.MemberonBegin(); it != membersObject.MemberonEnd(); it++)
-                {
-                    m_mapLayout.insert(std::make_pair(std::string(it->name.GetString()), std::string(it->value.GetString())));
-                }
-            }
+            __initMapFromJson("csb", m_mapLayout, rjson);
         }
         break;
     case kShader:
     {
-        if (rjson.IsObject() && rjson.HasMember("shader"))
-        {
-            const rapidjson::Value& membersObject = rjson["shader"];
-            for (rapidjson::Value::ConstMemberIterator it = membersObject.MemberonBegin(); it != membersObject.MemberonEnd(); it++)
-            {
-                m_mapShader.insert(std::make_pair(std::string(it->name.GetString()), std::string(it->value.GetString())));
-            }
-        }
+        __initMapFromJson("shader", m_mapShader, rjson);
     }
     break;
     default:
