@@ -23,7 +23,8 @@ bool ResMgr::initRes()
     auto contentStr = FileUtils::getInstance()->getStringFromFile(filePath);
     rapidjson::Document rapidJson;
     rapidJson.Parse<0>(contentStr.c_str());
-    if (rapidJson.HasParseError())  //解析错误  
+    /* 解析错误 */
+    if (rapidJson.HasParseError())    
     {
         log("GetParseError %s\n", rapidJson.GetParseError());
     }
