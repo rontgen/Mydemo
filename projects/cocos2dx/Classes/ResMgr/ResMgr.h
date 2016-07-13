@@ -35,7 +35,7 @@ public:
     bool initRes();
     cocos2d::Ref* createRes(const std::string& resName, ResType type);
     GLProgramState* createShader(const std::string& vertexStr, const std::string& fragStr);
-    const std::string& getPathFromKey(const ResType type, const std::string& resKey);
+    const std::string getPathFromKey(const ResType type, const std::string& resKey);
 private:
     ResMgr();
     ~ResMgr();
@@ -51,14 +51,12 @@ private:
     cocos2d::Ref* __createCsbLayer(const std::string& pStr);
     cocos2d::GLProgramState* __createShaderProgram(const std::string& pVertexStr, const std::string& pFragStr);
 
-    const std::string& __getPathByKey(const ResType type, const std::string& key);
+    const std::string __getPathByKey(const ResType type, const std::string& key);
     void __initResTypeMap();
+    void __initScale9ResTypeMap();
     void __initMapFromJson(const std::string& mapType, std::map<std::string, std::string>& map, const rapidjson::Document& rjson);
 private:
     std::unordered_map<ResType, std::tuple<std::string, std::map<std::string, std::string>>> m_mapResType;
-    std::map<std::string, std::string> m_mapImages;
-    std::map<std::string, std::string> m_mapLayout;
-    std::map<std::string, std::string> m_mapShader;
     std::string m_sImgPathPrefix;
 };
 

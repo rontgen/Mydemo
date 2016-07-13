@@ -7,9 +7,9 @@ using namespace cocos2d::ui;
 //ResMgr* ResMgr::m_sResMgr = nullptr;
 
 ResMgr::ResMgr()
-    : m_mapImages()
-    , m_sImgPathPrefix("")
+    : m_sImgPathPrefix("")
 {
+    m_mapResType.clear();
 }
 
 ResMgr::~ResMgr()
@@ -33,7 +33,13 @@ bool ResMgr::initRes()
     __initResMap(kSprite, rapidJson);
     __initResMap(kCsb, rapidJson);
     __initResMap(kShader, rapidJson);
+    __initScale9ResTypeMap();
     return true;
+}
+
+void ResMgr::__initScale9ResTypeMap()
+{
+    m_mapResType.emplace(ResType::kScale9Sprite, m_mapResType[ResType::kSprite]);
 }
 
 cocos2d::Ref* ResMgr::createRes(const std::string& resName, ResType type)
@@ -66,33 +72,14 @@ GLProgramState* ResMgr::createShader(const std::string& vertexStr, const std::st
 {
     return __createShaderProgram(vertexStr, fragStr);
 }
-const std::string& ResMgr::getPathFromKey(const ResType type, const std::string& resKey)
+const std::string ResMgr::getPathFromKey(const ResType type, const std::string& resKey)
 {
-    switch (type)
+    if (m_mapResType.find(type) != m_mapResType.end())
     {
-    case kScale9Sprite:
-    case kSprite:
-        {
-            CCASSERT(m_mapImages.find(resKey) != m_mapImages.end(), "");
-            return m_mapImages.at(resKey);
-        }
-        break;
-    case kCsb:
-        {
-            CCASSERT(m_mapLayout.find(resKey) != m_mapLayout.end(), "");
-            return m_mapLayout.at(resKey);
-        }
-        break;
-    case kShader:
-    {
-        CCASSERT(m_mapShader.find(resKey) != m_mapShader.end(), "");
-        return m_mapShader.at(resKey);
+        auto map = std::get<1>(m_mapResType[type]);
+        CCASSERT(map.find(resKey) != map.end(), "");
+        return map.at(resKey);
     }
-    break;
-    default:
-        break;
-    }
-
 }
 
 bool ResMgr::__checkPathStr(const ResType type, const std::string& pStr)
@@ -139,9 +126,9 @@ bool ResMgr::__checkPathStr(const ResType type, const std::string& pStr)
 void ResMgr::__initResTypeMap()
 {
     m_mapResType.clear();
-    m_mapResType.emplace(ResType::kCsb, std::make_tuple("csb", m_mapLayout));
-    m_mapResType.emplace(ResType::kSprite, std::make_tuple("images", m_mapLayout));
-    m_mapResType.emplace(ResType::kShader, std::make_tuple("shader", m_mapLayout));
+    m_mapResType.emplace(ResType::kCsb, std::tie("csb", std::map<std::string, std::string>()));
+    m_mapResType.emplace(ResType::kSprite, std::tie("images", std::map<std::string, std::string>()));
+    m_mapResType.emplace(ResType::kShader, std::tie("shader", std::map<std::string, std::string>()));
 }
 
 void ResMgr::__initMapFromJson(const std::string& mapType, std::map<std::string, std::string>& map, const rapidjson::Document& rjson)
@@ -159,25 +146,9 @@ void ResMgr::__initMapFromJson(const std::string& mapType, std::map<std::string,
 
 void ResMgr::__initResMap(const ResType type, const rapidjson::Document& rjson)
 {
-    switch (type)
+    if (m_mapResType.find(type) != m_mapResType.end())
     {
-    case kSprite:
-        {
-            __initMapFromJson("images", m_mapImages, rjson);
-        }
-        break;
-    case kCsb:
-        {
-            __initMapFromJson("csb", m_mapLayout, rjson);
-        }
-        break;
-    case kShader:
-    {
-        __initMapFromJson("shader", m_mapShader, rjson);
-    }
-    break;
-    default:
-        break;
+        __initMapFromJson(std::get<0>(m_mapResType[type]), std::get<1>(m_mapResType[type]), rjson);
     }
 }
 
@@ -235,47 +206,18 @@ cocos2d::GLProgramState* ResMgr::__createShaderProgram(const std::string& pVerte
     return GLProgramState::getOrCreateWithGLProgram(program);
 }
 
-const std::string& ResMgr::__getPathByKey(const ResType type, const std::string& key)
+const std::string ResMgr::__getPathByKey(const ResType type, const std::string& key)
 {
-    
-    switch (type)
-    {
-    case kSprite:
-    {
-        if (m_mapImages.find(key)!= m_mapImages.end())
-        {
-            return m_mapImages.at(key);
-        }
-        else
-        {
-            return "";
-        }
-    }
-    break;
-    case kCsb:
-    {
-        if (m_mapLayout.find(key) != m_mapLayout.end())
-        {
-            return m_mapLayout.at(key);
-        }
-        else
-        {
-            return "";
-        }
-    }
-    case kShader:
-    {
-        if (m_mapShader.find(key) != m_mapShader.end())
-        {
-            return m_mapShader.at(key);
-        }
-        else
-        {
-            return "";
-        }
-    }
-    break;
-    default:
-        break;
-    }
+   if (m_mapResType.find(type) != m_mapResType.end())
+   {
+       auto map = std::get<1>(m_mapResType[type]);
+       if (map.find(key) != map.end())
+       {
+           return map.at(key);
+       }
+       else
+       {
+           return "";
+       }
+   }
 }
