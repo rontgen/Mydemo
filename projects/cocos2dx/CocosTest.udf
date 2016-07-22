@@ -30,9 +30,6 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="images/package/ball.csi" />
-          <FilePathData Path="images/package/share.csi" />
-          <FilePathData Path="images/package/UI.csi" />
           <FilePathData Path="layout/MainMenu.csd" />
         </OpenedDocuments>
         <ActiveDocument Path="layout/MainMenu.csd" />

@@ -43,6 +43,7 @@
               <Image Name="QuitButtonDown.png" />
               <Image Name="Slider.png" />
               <Image Name="SliderButton.png" />
+              <Image Name="HelloWorld.png" />
             </Folder>
           </Folder>
         </Folder>

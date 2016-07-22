@@ -7,7 +7,7 @@
             <key>images/UI/Game/arrowCCW.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1616,110},{104,104}}</string>
+                <string>{{1284,632},{104,104}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -20,7 +20,7 @@
             <key>images/UI/Game/arrowCCWSelected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1722,108},{104,104}}</string>
+                <string>{{1864,602},{104,104}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -33,7 +33,7 @@
             <key>images/UI/Game/arrowCW.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1616,2},{104,106}}</string>
+                <string>{{1934,2},{104,106}}</string>
                 <key>offset</key>
                 <string>{0,1}</string>
                 <key>rotated</key>
@@ -46,7 +46,7 @@
             <key>images/UI/Game/arrowCWSelected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1934,2},{104,104}}</string>
+                <string>{{1758,602},{104,104}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -59,7 +59,7 @@
             <key>images/UI/Game/arrowForHit.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1828,2},{104,104}}</string>
+                <string>{{1652,602},{104,104}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -72,7 +72,7 @@
             <key>images/UI/Game/arrowForHitSelected.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1722,2},{104,104}}</string>
+                <string>{{1934,110},{104,104}}</string>
                 <key>offset</key>
                 <string>{0,1}</string>
                 <key>rotated</key>
@@ -85,7 +85,7 @@
             <key>images/UI/Game/endgame.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{382,892},{124,124}}</string>
+                <string>{{1656,256},{124,124}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -98,7 +98,7 @@
             <key>images/UI/Game/endgameSeleted.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{256,892},{124,124}}</string>
+                <string>{{1860,216},{124,124}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -111,7 +111,7 @@
             <key>images/UI/Game/restart Seleted.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,892},{126,126}}</string>
+                <string>{{1806,2},{126,126}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -124,7 +124,7 @@
             <key>images/UI/Game/restart.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{130,892},{124,124}}</string>
+                <string>{{1734,130},{124,124}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -137,7 +137,7 @@
             <key>images/UI/MainMenu/ContinueButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1248,832},{366,106}}</string>
+                <string>{{1284,524},{366,106}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -150,7 +150,7 @@
             <key>images/UI/MainMenu/ContinueButtonDown.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{508,858},{370,110}}</string>
+                <string>{{1656,382},{370,110}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -159,6 +159,19 @@
                 <string>{{0,0},{370,110}}</string>
                 <key>sourceSize</key>
                 <string>{370,110}</string>
+            </dict>
+            <key>images/UI/MainMenu/HelloWorld.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,724},{960,576}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{960,576}}</string>
+                <key>sourceSize</key>
+                <string>{960,576}</string>
             </dict>
             <key>images/UI/MainMenu/MainMenu.png</key>
             <dict>
@@ -176,7 +189,7 @@
             <key>images/UI/MainMenu/PlayGameButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1196,724},{366,106}}</string>
+                <string>{{1652,494},{366,106}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -189,7 +202,7 @@
             <key>images/UI/MainMenu/PlayGameButtonDown.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{824,724},{370,110}}</string>
+                <string>{{1284,304},{370,110}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -202,7 +215,7 @@
             <key>images/UI/MainMenu/QuitButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{880,858},{366,106}}</string>
+                <string>{{1284,416},{366,106}}</string>
                 <key>offset</key>
                 <string>{-1,0}</string>
                 <key>rotated</key>
@@ -215,7 +228,7 @@
             <key>images/UI/MainMenu/QuitButtonDown.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{452,724},{370,110}}</string>
+                <string>{{1284,192},{370,110}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -228,7 +241,7 @@
             <key>images/UI/MainMenu/Slider.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{506,836},{520,20}}</string>
+                <string>{{1284,2},{520,20}}</string>
                 <key>offset</key>
                 <string>{-3,0}</string>
                 <key>rotated</key>
@@ -241,7 +254,7 @@
             <key>images/UI/MainMenu/SliderButton.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{452,836},{52,52}}</string>
+                <string>{{1734,24},{52,52}}</string>
                 <key>offset</key>
                 <string>{-1,-1}</string>
                 <key>rotated</key>
@@ -254,7 +267,7 @@
             <key>images/UI/MainMenu/logo.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{2,724},{448,166}}</string>
+                <string>{{1284,24},{448,166}}</string>
                 <key>offset</key>
                 <string>{-16,-1}</string>
                 <key>rotated</key>
@@ -272,9 +285,9 @@
             <key>realTextureFileName</key>
             <string>UI.png</string>
             <key>size</key>
-            <string>{2048,1024}</string>
+            <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:c32788e9d9da25c550e581b20341e8f1:1/1$</string>
+            <string>$TexturePacker:SmartUpdate:bec580d6500f72886121e2e811445479:1/1$</string>
             <key>textureFileName</key>
             <string>UI.png</string>
         </dict>

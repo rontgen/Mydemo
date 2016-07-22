@@ -22,7 +22,7 @@ void MsgCenter::addObserver(const std::string msg, callback func)
     {
         return;
     }
-    m_mapListener.insert(std::make_pair(msg, func));
+    m_mapListener.emplace(msg, func);
 }
 
 void MsgCenter::sendMsg(const std::string msg, const cocos2d::Ref* pSender)

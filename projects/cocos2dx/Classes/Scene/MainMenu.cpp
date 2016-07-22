@@ -89,7 +89,8 @@ bool MainMenu::init()
     //this->addChild(label, 1);
 
     // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create(kimgMainMenu);
+    auto csb = static_cast<Layer*>(ResMgr::Instance()->createRes("test", ResType::kCsb));
+    auto sprite = csb->getChildByName<Sprite*>("img_bg");
 
     //shader test start
 //     auto glProgram = GLProgram::createWithFilenames(kShaderVertexAttributePassShader, kLenseFlareShader);
@@ -99,13 +100,13 @@ bool MainMenu::init()
 //     glProgramState->setUniformVec2("resolution", Vec2(spriteContentSize.width, spriteContentSize.height));
 //     sprite->setGLProgramState(glProgramState);
     //end
-    auto glShaderState = ResMgr::Instance()->createShader("attribute_pass_vertex", "grey_scale");
-    sprite->setGLProgramState(glShaderState);
+    //auto glShaderState = ResMgr::Instance()->createShader("attribute_pass_vertex", "grey_scale");
+    //sprite->setGLProgramState(glShaderState);
 
     // position the sprite on the center of the screen
     sprite->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+    this->addChild(csb, 0);
 
     auto logo = Sprite::create(kimgMainMenuLogo);
     logo->setPosition(Vec2((origin.x + visibleSize.width) / 2, (origin.y + visibleSize.height)*0.8f));

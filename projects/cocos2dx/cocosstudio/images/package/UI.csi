@@ -9,6 +9,7 @@
       <FilePathData Path="images/UI/Game/arrowCWSelected.png" />
       <FilePathData Path="images/UI/Game/arrowForHit.png" />
       <FilePathData Path="images/UI/Game/arrowForHitSelected.png" />
+      <FilePathData Path="images/UI/MainMenu/HelloWorld.png" />
     </ImageFiles>
   </Content>
 </PlistInfoProjectFile>
