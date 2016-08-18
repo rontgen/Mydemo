@@ -147,13 +147,14 @@ def textpacker_func(source, output):
                 if file.endswith('.png'):
                     file_path = path2unix(root, file)
                     target_path = path2unix(output, item + '.png')
-                    print("file_path = {:s}" .format(file_path))
                     plist_path = target_path.replace('.png', '.plist')
-                    print("plist_path = {:s}" .format(plist_path))
-                    return_code = subprocess.call([tp_path, temp_folder,'--sheet', target_path, '--data', plist_path, '--disable-rotation', '--dither-fs-alpha'])
-                    if return_code != 0:
-                        raise Exception("[hydra][package_image_hydra]: return_code = %s" %return_code)
-                    add_plist_prefix(source, item, plist_path)
+                    if not os.path.exists(target_path) and not os.path.exists(plist_path):
+                        print("file_path = {:s}" .format(file_path))
+                        print("plist_path = {:s}" .format(plist_path))
+                        return_code = subprocess.call([tp_path, temp_folder,'--sheet', target_path, '--data', plist_path, '--disable-rotation', '--dither-fs-alpha'])
+                        if return_code != 0:
+                            raise Exception("[hydra][package_image_hydra]: return_code = %s" %return_code)
+                        add_plist_prefix(source, item, plist_path)
         shutil.rmtree(temp_folder)
     shutil.rmtree(temp_path)
 

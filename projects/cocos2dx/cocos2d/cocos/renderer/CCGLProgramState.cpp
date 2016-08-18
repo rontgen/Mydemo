@@ -311,7 +311,7 @@ bool GLProgramState::init(GLProgram* glprogram)
     CCASSERT(glprogram, "invalid shader");
 
     _glprogram = glprogram;
-    _glprogram->retain();
+    CC_SAFE_RETAIN(_glprogram);
 
     for(auto &attrib : _glprogram->_vertexAttribs) {
         VertexAttribValue value(&attrib.second);
